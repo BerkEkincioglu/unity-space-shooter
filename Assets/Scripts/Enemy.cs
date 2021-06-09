@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private float _speed = 4.0f;
+
     
 
     // Start is called before the first frame update
@@ -16,12 +17,34 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float randomX = Random.Range(-9.0f, 9.0f);
+        float randomX = Random.Range(-3.0f, 3.0f);
+
         float axisY = 11;
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
         if(transform.position.y < -1.5f)
         {
             transform.Translate(new Vector3(randomX, axisY, 0));
+        }
+       
+    }
+
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+
+            Player player = other.transform.GetComponent<Player>();
+
+            if(player)
+            {
+                player.Damage();
+            }
+            Destroy(this.gameObject);
+        }
+        if(other.tag == "Laser")
+        {
+            Destroy(other.gameObject);
         }
     }
 }
