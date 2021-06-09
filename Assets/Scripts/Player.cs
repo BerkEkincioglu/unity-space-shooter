@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
         {
             FireLaser();
         }
+
+        
     }
 
     void FireLaser()
@@ -36,6 +38,7 @@ public class Player : MonoBehaviour
         Vector3 laserPosition = new Vector3(transform.position.x, transform.position.y + .8f, 0);
         nextFire = Time.time + fireRate;
         Instantiate(_laserPrefabs, laserPosition, Quaternion.identity);
+        
     }
 
     void CalculateMovement()

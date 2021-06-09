@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private float _speed = 4.0f;
+    //private float hp = 100.0f;
 
     
 
@@ -45,6 +46,14 @@ public class Enemy : MonoBehaviour
         if(other.tag == "Laser")
         {
             Destroy(other.gameObject);
+            //Laser laser = other.transform.GetComponent<Laser>();
+            //this.hp -= laser.getAD();
+
+            //if(this.hp <=0)
+            //{
+            //    Destroy(this.gameObject);
+            //}
+
         }
     }
 }

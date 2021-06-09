@@ -6,6 +6,7 @@ public class Laser : MonoBehaviour
 {
 
     private float _speed = 8.0f;
+    //private float ad = 30.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +23,11 @@ public class Laser : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+
+    //public float getAD()
+    //{
+    //    return ad;
+    //}
 
 }
