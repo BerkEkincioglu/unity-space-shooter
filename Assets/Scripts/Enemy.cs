@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
     }
 
     
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
         {
@@ -46,13 +46,7 @@ public class Enemy : MonoBehaviour
         if(other.tag == "Laser")
         {
             Destroy(other.gameObject);
-            //Laser laser = other.transform.GetComponent<Laser>();
-            //this.hp -= laser.getAD();
-
-            //if(this.hp <=0)
-            //{
-            //    Destroy(this.gameObject);
-            //}
+            Destroy(this.gameObject);
 
         }
     }

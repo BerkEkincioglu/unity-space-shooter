@@ -87,9 +87,9 @@ public class Player : MonoBehaviour
         if (transform.position.y < 0) {
             transform.position = new Vector3(transform.position.x,0, 0);
         }
-        if (transform.position.y >= 0) {
+        if (transform.position.y >= 10) {
 
-            transform.position = new Vector3(transform.position.x, 0, 0);
+            transform.position = new Vector3(transform.position.x, 10, 0);
         }
 
 
