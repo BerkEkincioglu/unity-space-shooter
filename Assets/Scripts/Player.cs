@@ -11,12 +11,18 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int _lives = 3;
     private SpawnManager _spawnManager;
+    [SerializeField]
+    private GameObject _tripleShotPrefabs;
+    [SerializeField]
+    private bool tripleShot = false;
+
     // Start is called before the first frame update
     public float fireRate = 0.5f;
     public float nextFire = 0.0f;
+
     void Start()
     {
-        transform.position = new Vector3(0, 0, 0);
+        transform.position = new Vector3(0, 2, 0);
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
 
         if(_spawnManager == null)
@@ -41,12 +47,21 @@ public class Player : MonoBehaviour
 
     void FireLaser()
     {
-
         Vector3 laserPosition = new Vector3(transform.position.x, transform.position.y + .8f, 0);
         nextFire = Time.time + fireRate;
-        Instantiate(_laserPrefabs, laserPosition, Quaternion.identity);
+
+        if (tripleShot)
+        {
+            Instantiate(_tripleShotPrefabs, transform.position, Quaternion.identity);
+
+        } else
+        {
+            Instantiate(_laserPrefabs, laserPosition, Quaternion.identity);
+        }
+
         
     }
+    
 
     void CalculateMovement()
     {
@@ -103,12 +118,11 @@ public class Player : MonoBehaviour
         {
             _spawnManager.OnPlayerDead();
             Destroy(this.gameObject);
-
-            
-            //spawn.OnPlayerDead();
-
-
-
         }
+    }
+
+    public void TripleShotActive()
+    {
+        tripleShot = true;
     }
 }
