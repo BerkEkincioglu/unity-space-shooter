@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _tripleShotPrefabs;
     [SerializeField]
-    private bool tripleShot = false;
+    private bool _isTripleShotActive = false;
+
 
     // Start is called before the first frame update
     public float fireRate = 0.5f;
@@ -50,7 +51,7 @@ public class Player : MonoBehaviour
         Vector3 laserPosition = new Vector3(transform.position.x, transform.position.y + .8f, 0);
         nextFire = Time.time + fireRate;
 
-        if (tripleShot)
+        if (_isTripleShotActive)
         {
             Instantiate(_tripleShotPrefabs, transform.position, Quaternion.identity);
 
@@ -123,6 +124,13 @@ public class Player : MonoBehaviour
 
     public void TripleShotActive()
     {
-        tripleShot = true;
+        _isTripleShotActive = true;
+        StartCoroutine(TripleShotPowerDownRoutine());
+    }
+
+    IEnumerator TripleShotPowerDownRoutine()
+    {
+        yield return new WaitForSeconds(5.0f);
+        _isTripleShotActive = false;
     }
 }

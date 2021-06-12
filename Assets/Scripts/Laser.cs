@@ -17,9 +17,14 @@ public class Laser : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.up * _speed * Time.deltaTime);
+        //GameObject tripleShot = GameObject.Find("Triple_Shot");
 
         if (transform.position.y >= 14)
         {
+            if (transform.parent)
+            {
+                Destroy(transform.parent.gameObject);
+            }
             Destroy(this.gameObject);
         }
     }
