@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
-{
+public class Player : MonoBehaviour{
     [SerializeField]
     private float _speed = 7.0f;
+    private float _speedMultiplier = 2.0f;
     [SerializeField]
     private GameObject _laserPrefabs;
     [SerializeField]
@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     private GameObject _tripleShotPrefabs;
     [SerializeField]
     private bool _isTripleShotActive = false;
+    [SerializeField]
+    private bool _isSpeedUpActive = false;
 
 
     // Start is called before the first frame update
@@ -61,6 +63,7 @@ public class Player : MonoBehaviour
         }
 
         
+        
     }
     
 
@@ -74,6 +77,11 @@ public class Player : MonoBehaviour
         //transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * speed * Time.deltaTime);
 
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
+        if (_isSpeedUpActive)
+        {
+            transform.Translate(direction * _speed * _speedMultiplier*Time.deltaTime);
+        }
+
         transform.Translate(direction * _speed * Time.deltaTime);
 
         //if (transform.position.y >= 0)
@@ -127,10 +135,20 @@ public class Player : MonoBehaviour
         _isTripleShotActive = true;
         StartCoroutine(TripleShotPowerDownRoutine());
     }
+    public void SpeedUpActive()
+    {
+        _isSpeedUpActive = true;
+        StartCoroutine(SpeedUpPowerDownRoutine());
+    }
 
     IEnumerator TripleShotPowerDownRoutine()
     {
         yield return new WaitForSeconds(5.0f);
         _isTripleShotActive = false;
+    }
+    IEnumerator SpeedUpPowerDownRoutine()
+    {
+        yield return new WaitForSeconds(5.0f);
+        _isSpeedUpActive = false;
     }
 }
