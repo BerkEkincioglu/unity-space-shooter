@@ -5,13 +5,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private float _speed = 4.0f;
+    private Player _player;
     //private float hp = 100.0f;
 
     
 
     // Start is called before the first frame update
     void Start(){
-        
+        _player =  GameObject.Find("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -40,6 +41,10 @@ public class Enemy : MonoBehaviour
         }
         if(other.tag == "Laser"){
             Destroy(other.gameObject);
+            if (_player)
+            {
+                _player.AddScore();
+            }
             Destroy(this.gameObject);
 
         }

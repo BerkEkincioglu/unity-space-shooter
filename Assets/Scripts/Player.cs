@@ -21,6 +21,10 @@ public class Player : MonoBehaviour{
     private bool _isShieldActive = false;
     [SerializeField]
     private GameObject _shieldVisualizer;
+    [SerializeField]
+    private int _score;
+
+    private UIManager _uimanager;
 
 
     // Start is called before the first frame update
@@ -37,6 +41,11 @@ public class Player : MonoBehaviour{
             Debug.Log("Spawn Manager is null");
         }
 
+        _uimanager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        if (_uimanager == null)
+        {
+            Debug.Log("UIManager is null");
+        }
     }
 
     // Update is called once per frame
@@ -122,6 +131,11 @@ public class Player : MonoBehaviour{
         }
 
 
+    }
+    public void AddScore()
+    {
+        _score += 10;
+        _uimanager.UpdateScore(_score);
     }
 
     public void Damage()
