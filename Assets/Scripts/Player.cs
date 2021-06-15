@@ -144,6 +144,7 @@ public class Player : MonoBehaviour{
         if (!_isShieldActive)
         {
             _lives--;
+            _uimanager.UpdateLives(_lives);
         }
 
         if(_lives <1)
