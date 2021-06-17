@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{2E6525CD-FF2F-3D98-BFB0-971CC7B33E07}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Laser.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemy.cs" />
-      <File FileName="Assets/Scripts/SpawnManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player.cs" Line="154" Column="1" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Laser.cs" />
+      <File FileName="Assets/Scripts/SpawnManager.cs" />
+      <File FileName="Assets/Scripts/Player.cs" />
       <File FileName="Assets/Scripts/Powerup.cs" />
-      <File FileName="Assets/Scripts/UIManager.cs" Line="27" Column="47" />
+      <File FileName="Assets/Scripts/UIManager.cs" />
       <File FileName="Assets/Scripts/GameManager.cs" Line="15" Column="37" />
-      <File FileName="Assets/Scripts/Main_menu/MainMenu.cs" Line="10" Column="35" />
+      <File FileName="Assets/Scripts/Main_menu/MainMenu.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,7 +28,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.UnityEngine.TestRunner PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="263af5fc-2ab2-46d1-8c88-e5a185d011ad" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2345e8de-aa3c-4e60-9f00-6d7165bafe45" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
