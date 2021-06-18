@@ -23,6 +23,8 @@ public class Player : MonoBehaviour{
     private GameObject _shieldVisualizer;
     [SerializeField]
     private int _score;
+    [SerializeField]
+    private GameObject[] _engines;
 
     private UIManager _uimanager;
 
@@ -145,6 +147,16 @@ public class Player : MonoBehaviour{
         {
             _lives--;
             _uimanager.UpdateLives(_lives);
+            int ranEngine = Random.Range(0, 2);
+            if(_lives == 2)
+            {
+                _engines[ranEngine].gameObject.SetActive(true);
+            }
+            if(_lives == 1)
+            {
+                _engines[0].gameObject.SetActive(true);
+                _engines[1].gameObject.SetActive(true);
+            }
         }
 
         if(_lives <1)
