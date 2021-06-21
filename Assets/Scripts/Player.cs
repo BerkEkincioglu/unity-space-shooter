@@ -26,6 +26,11 @@ public class Player : MonoBehaviour{
     [SerializeField]
     private GameObject[] _engines;
 
+    [SerializeField]
+    private AudioClip _laserSoundClip;
+
+    private AudioSource _audioSource;
+
     private UIManager _uimanager;
 
 
@@ -37,17 +42,24 @@ public class Player : MonoBehaviour{
     {
         transform.position = new Vector3(0, 2, 0);
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
+        _audioSource = GetComponent<AudioSource>();
+        _uimanager = GameObject.Find("Canvas").GetComponent<UIManager>();
 
         if(_spawnManager == null)
         {
             Debug.Log("Spawn Manager is null");
         }
 
-        _uimanager = GameObject.Find("Canvas").GetComponent<UIManager>();
         if (_uimanager == null)
         {
             Debug.Log("UIManager is null");
         }
+        if(_audioSource == null)
+        {
+            Debug.Log("Audio Source is null");
+        }
+
+        _audioSource.clip = _laserSoundClip;
     }
 
     // Update is called once per frame
@@ -78,7 +90,8 @@ public class Player : MonoBehaviour{
             Instantiate(_laserPrefabs, laserPosition, Quaternion.identity);
         }
 
-        
+        _audioSource.Play();
+
         
     }
     

@@ -1,16 +1,16 @@
 ﻿<Properties StartupConfiguration="{2E6525CD-FF2F-3D98-BFB0-971CC7B33E07}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Explosion.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemy.cs" Line="53" Column="41" />
-      <File FileName="Assets/Scripts/Laser.cs" />
-      <File FileName="Assets/Scripts/SpawnManager.cs" Line="36" Column="53" />
-      <File FileName="Assets/Scripts/Player.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Laser.cs" Line="1" Column="1" IsPinned="True" />
+      <File FileName="Assets/Scripts/Asteroid.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="53" Column="43" />
+      <File FileName="Assets/Scripts/SpawnManager.cs" />
+      <File FileName="Assets/Scripts/Player.cs" />
       <File FileName="Assets/Scripts/Powerup.cs" />
       <File FileName="Assets/Scripts/UIManager.cs" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="15" Column="37" />
-      <File FileName="Assets/Scripts/Main_menu/MainMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Asteroid.cs" Line="31" Column="13" />
-      <File FileName="Assets/Scripts/Explosion.cs" Line="10" Column="40" />
+      <File FileName="Assets/Scripts/GameManager.cs" />
+      <File FileName="Assets/Scripts/Main_menu/MainMenu.cs" />
+      <File FileName="Assets/Scripts/Explosion.cs" Line="11" Column="44" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,7 +19,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="Main_menu" expanded="True" />
-                <Node name="Explosion.cs" selected="True" />
+                <Node name="Enemy.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -29,7 +29,8 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9bd5ffbf-b0aa-48b5-80be-839efe6d0aed" />
+  <MonoDevelop.Ide.ItemProperties.UnityEngine.TestRunner PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a83bbbff-a2e8-48b9-ac45-2eb547d2702e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
